@@ -4,7 +4,7 @@ const NavBar = () => {
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Quiénes somos</a></li>
-            <li class="submenu"><a href="#">Servicios</a><i class="far fa-caret-square-down more"></i><ul>
+            <li className="submenu"><a href="#">Servicios</a><i className="far fa-caret-square-down more"></i><ul>
                 <li><a href="#">Servicio A</a></li>
                 <li><a href="#">Servicio B</a></li>
                 <li><a href="#">Servicio C</a></li>
