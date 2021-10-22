@@ -1,7 +1,8 @@
 const Header = () => {
     return(
-        <h2> E-Comerce</h2>
+        <header>
+        <a className="logo"><img src="../public/multimedia/logo.png" alt="logo" /></a>
+        </header>
     );
 }
 
-export default Header
