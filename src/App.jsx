@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import Nav from "./components/NavBar"
 import CarWidget from "./components/CarWidget.jsx";
 import ItemListContainer from "./components/ItemListContainer"
+import ItemCount from ".components/ItemCount"
 
 
 const App = () => {
@@ -10,7 +11,9 @@ const App = () => {
         <Header/>
         <Nav/>
         <ItemListContainer mensaje="Hola, ya te registraste?"/>
-        <CarWidget/>
+        <Itemcount stock="6"/>
+        <CarWidget/>    
+
         </>
     );
 }
