@@ -10,7 +10,7 @@ const App = () => {
         <>
         <Header/>
         <Nav/>
-        <ItemListContainer mensaje="Hola, ya te registraste?"/>
+        <ItemListContainer mensaje="Hola, ya te elegiste?"/>
         <Itemcount stock="6"/>
         <CarWidget/>    
 
