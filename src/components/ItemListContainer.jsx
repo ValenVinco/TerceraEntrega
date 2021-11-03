@@ -1,21 +1,20 @@
 import {useState, useEffect} from "react";
+
 import ItemList from "./ItemList"
 
-const ItemListContainer = (greeting) => {
 
-    function ItemListContainer () {
+function ItemListContainer () {
 
-        const [productos, setProductos] = useState([]);
-        useEffect(() => {
-            setTimeout(() => {
+    const [productos, setProductos] = useState([]);
 
-                setProductos(productos_iniciales);
+    useEffect(() => {
+        setTimeout(() => {
+            setProductos(setTodos);
+            <ItemList prop={productos}/>
+        }, 2000);
+    }, []);
 
-            }, 2000);
-            
-        }, []);
-        return (
-        <ItemList prop={productos}/>
-        )
-   
-};
+    return 
+}
+
+export default ItemListContainer;
