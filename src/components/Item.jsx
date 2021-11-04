@@ -1,5 +1,6 @@
 const Item = () => { 
     return(
+        <Link to="item/:id">
         <div  className="container">
         <div  className="card">
             <div  className="shoeBackground">
@@ -14,6 +15,7 @@ const Item = () => {
             </div>
         </div>
     </div>
+    </Link>
         );
 
 
