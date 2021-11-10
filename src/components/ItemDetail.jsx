@@ -1,3 +1,12 @@
+import ItemCount from "./ItemCount"
+import {Link} from "react-router-dom"
+
+function ItemDetail({producto}){
+
+    const handleUpCounter = (cont) => {
+        console.log('contador:'+ cont)
+    }
+}
 const ItemDetail = ((Item)) (
     return <> (
     <h1  className="nike">nike</h1>
@@ -44,11 +53,16 @@ const ItemDetail = ((Item)) (
                     </div>
                 </div>
                 <div  className="buy-price">
+                <Link to="./cart">
                     <a href="#"  className="buy"><i  className="fas fa-shopping-cart"></i>Add to card</a>
+                    </Link>
                     <div  className="price">
                         <i  className="fas fa-dollar-sign"></i>
                         <h1>189.99</h1>
                     </div>
                 </div>
-        <>;)
-)
+    }   
+
+}
+
+ixport default ItemDetail

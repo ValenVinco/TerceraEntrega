@@ -40,10 +40,13 @@ const App = () => {
                 <ItemListContainer mensaje="ItemListContainer"/>
             <Route/>
         </Switch>
+        <Route path="./cart">
+         </Route>
         <Switch>
+            
             <Route path="/item/:id"> 
-                <ItemDetailContainer/>
-            <Route/>
+            <ItemDetailContainer/>
+         <Route/>
         </Switch>
       
         

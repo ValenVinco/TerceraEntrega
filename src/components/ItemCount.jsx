@@ -1,13 +1,14 @@
 import {useState} from "react";
 
 
-const ItemCount = (producto) => {
+const ItemCount = ({ handleUpCounter, stock}) => {
 
     const [cont, setCont] = useState(1);
 
     const agregar = () =>{
         if(cont < producto.stock){
             setCont(cont + 1);
+            handleUpCounter( cont + 1)
         }
     }
 
@@ -15,6 +16,7 @@ const ItemCount = (producto) => {
     const quitar = () =>{
         if(cont > 0){
             setCont(cont - 1);
+            handleUpCounter( cont – 1)
         }
     }
 
