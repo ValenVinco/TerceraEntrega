@@ -14,6 +14,7 @@ import CarWidget from "./components/CarWidget.jsx";
 import ItemCount from "./components/ItemCount";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./ItemDetailContainer";
+import CartProvider from "./components/CartContext"
 
 
 function App() {
@@ -48,8 +49,6 @@ const App = () => {
             <ItemDetailContainer/>
          <Route/>
         </Switch>
-      
-        
         <Router/>
             
 

@@ -1,4 +1,15 @@
+import { CartContext } from "./CartContext";
+
 const Item = () => { 
+
+    const CartContext = useContext(CartContext);
+
+    const {cart, addToCart} = CartContext;
+    console.log(CartContext)
+
+    const onAdd = (qty) => {
+        addToCart(item, qty)
+    }
     return(
         <Link to="item/:id">
         <div  className="container">

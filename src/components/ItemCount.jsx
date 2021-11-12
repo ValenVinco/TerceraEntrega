@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 
-const ItemCount = ({ handleUpCounter, stock}) => {
+const ItemCount = ({ handleUpCounter, stock, onAdd}) => {
 
     const [cont, setCont] = useState(1);
 
