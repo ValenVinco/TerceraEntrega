@@ -31,6 +31,7 @@ function App() {
 const App = () => {
     return(
 
+        <CartProvider>
         <Router>
            
         <Header/>
