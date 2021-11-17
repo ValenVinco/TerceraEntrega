@@ -14,7 +14,8 @@ import CarWidget from "./components/CarWidget.jsx";
 import ItemCount from "./components/ItemCount";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./ItemDetailContainer";
-import CartProvider from "./components/CartContext"
+import CartProvider from "./components/CartContext";
+import Cart from "./components/Cart";
 
 
 function App() {
@@ -30,28 +31,28 @@ function App() {
 
 const App = () => {
     return(
-
-        <CartProvider>
-        <Router>
-           
-        <Header/>
-        <Nav/> <CarWidget/>
-        <ItemCount stock="6"/>
-        <Switch>
-            <Route path="/">
-                <ItemListContainer mensaje="ItemListContainer"/>
-            <Route/>
-        </Switch>
-        <Route path="./cart">
-         </Route>
-        <Switch>
-            
-            <Route path="/item/:id"> 
-            <ItemDetailContainer/>
-         <Route/>
-        </Switch>
-        <Router/>
-            
+        <BrowserRouter>
+                <CartProvider>
+                <Router>
+                
+                <Header/>
+                <Nav/> <CarWidget/>
+                <ItemCount stock="6"/>
+                <Switch>
+                    <Route path="/">
+                        <ItemListContainer mensaje="ItemListContainer"/>
+                    <Route/>
+                </Switch>
+                <Route path="./cart">
+                </Route>
+                <Switch>
+                    
+                    <Route path="/item/:id"> 
+                    <ItemDetailContainer/>
+                <Route/>
+                </Switch>
+                <Router/>
+    </BrowserRouter>     
 
        
     );
