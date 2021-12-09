@@ -1,6 +1,8 @@
 import {useState, useEffect} from "react";
-
+//  import {useParams} from "react-router-dom";
+import productos_iniciales from "../productos.json"
 import ItemList from "./ItemList"
+
 
 
 function ItemListContainer () {
@@ -9,12 +11,26 @@ function ItemListContainer () {
 
     useEffect(() => {
         setTimeout(() => {
-            setProductos(setTodos);
-            <ItemList prop={productos}/>
-        }, 2000);
+            setProductos(productos_iniciales);
+        }, 0); 
+        
     }, []);
 
-    return 
+    if(productos.length === 0){
+        return (
+            <div className="itemListContainer">
+                <p className="carga"> Loading </p>
+            </div>
+        );
+    } else {
+        return (
+            <div className="itemListContainer">
+
+                <ItemList productos={productos}/>
+
+            </div>
+        );
+    }
 }
 
 export default ItemListContainer;

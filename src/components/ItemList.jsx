@@ -1,21 +1,20 @@
 import Item from "./Item"
 
-function ItemList(productos) {
+function ItemList (props) {
 
-
-    if(productos.length === 0){
-        return <p> Loading </p>;
-    } else {
-        return (
-            <div className="ListContainer">
-                {productos.map((e, i) => {
-                    return (
-                        <Item prop={producto}/>
-                    )
-                })}
-            </div>
-        );
-    }
+    return (
+        <div className = "itemList">
+            {props.productos.map((producto) => {
+    
+                return (
+                    
+                    <Item producto={producto} key={producto.id}/>
+                )
+            })}
+        </div>
+    )   
 }
 
-export default ItemList
+export default ItemList;
+
+

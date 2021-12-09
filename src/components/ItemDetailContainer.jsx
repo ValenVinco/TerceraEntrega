@@ -1,18 +1,24 @@
 import ItemDetail from "./ItemDetail"
 import {useState, useEffect} from "react";
+import {useParams} from "react-router-dom";
 import productos_iniciales from "../productos.json"
 
 
-
-
 function ItemDetailContainer () {
+
+    const {id} = useParams();
+
+    useEffect(() => {
+        console.log("Id recivido:", id)
+    }, [id])
     
     const [productos, setProductos] = useState([]);
     
     useEffect(() => {
         setTimeout(() => {
             setProductos(productos_iniciales);
-        }, 2000);
+        }, 0);
+      
     }, []);
     
     if(productos.length === 0){
@@ -24,9 +30,7 @@ function ItemDetailContainer () {
     } else {
         return (
             <div className="itemDetailContainer">
-
-                <ItemDetail producto={productos[0]}/>
-
+                <ItemDetail producto={productos[id-1]}/>
             </div>
         );
     }

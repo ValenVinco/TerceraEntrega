@@ -1,11 +1,15 @@
+import {Link} from "react-router-dom"
+
+
 const Header = () => {
+
     return(
-      <Link to="/">
         <header>
-         <a className="logo"><img src="../public/multimedia/logo.png" alt="logo" /></a>
+            <div className="header__logo">
+                <Link to="index.html"><img src="Multimedia/logo.png" className="logo" alt="logo nike"></img></Link>
+            </div>
         </header>
-      </Link>
     );
 }
 
-export default Header
+export default Header;

@@ -1,61 +1,44 @@
-import React, {useState, useEffect} from "react";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
-
-
-
+import FileUpload from "./FileUpload";
+import {BrowserRouter,Route,Routes} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import Header from "./components/Header";
-import Nav from "./components/NavBar";
-import CarWidget from "./components/CarWidget.jsx";
-import ItemCount from "./components/ItemCount";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./ItemDetailContainer";
-import CartProvider from "./components/CartContext";
+import Nav from "./components/Nav";
 import Cart from "./components/Cart";
+import Aside from "./components/Aside";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Footer from "./components/Footer";
+import CustomProvider from "./Contexts/CartContext";
 
 
-function App() {
-    const url ='https://jsonplaceholder.typicode.com/todos'
-    const [todos, setTodos] = useState ()
-    const fetchApi = async () =>{
-        const response = await fetch (url)
-        const responseJSON = await response.json()
-        setTodos (responseJSON)
-    
-    }
-}
+
+const resultado = useParams;
+console.log(resultado);
+
 
 const App = () => {
     return(
-        <BrowserRouter>
-                <CartProvider>
-                <Router>
-                
-                <Header/>
-                <Nav/> <CarWidget/>
-                <ItemCount stock="6"/>
-                <Switch>
-                    <Route path="/">
-                        <ItemListContainer mensaje="ItemListContainer"/>
-                    <Route/>
-                </Switch>
-                <Route path="./cart">
-                </Route>
-                <Switch>
-                    
-                    <Route path="/item/:id"> 
-                    <ItemDetailContainer/>
-                <Route/>
-                </Switch>
-                <Router/>
-    </BrowserRouter>     
-
-       
+        <>
+            <BrowserRouter>
+                <CustomProvider>
+                    <Header/>
+                    <Nav/>
+                    <Routes>
+                        <Route path="/" exact element={
+                            <div className="index__main">
+                                <ItemListContainer className="ItemListContainer"/>
+                                <Aside/>
+                            </div>
+                        }/>
+                        <Route path="/cart" exact element={<Cart/>}/>
+                        <Route path="/producto/:id" exact element={<ItemDetailContainer className="ItemDetailContainer"/>}/>
+                    </Routes>
+                    <FileUpload/>
+                    <Footer/>
+                </CustomProvider>
+            </BrowserRouter>
+        </>
     );
 }
 
-export default App
+export default App;

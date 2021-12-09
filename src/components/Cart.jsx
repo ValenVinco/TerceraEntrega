@@ -18,7 +18,7 @@ function Cart() {
                         
                 )
             })}
-            <button onClick={vaciar}> VACIAR CARRITO</button>
+            <button onClick={vaciar}>VACIAR CARRITO</button>
         </>
     )
 }

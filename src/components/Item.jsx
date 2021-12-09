@@ -1,39 +1,24 @@
-import { CartContext } from "./CartContext";
+import {Link} from "react-router-dom"
 
-const Item = () => { 
+function Item({producto}) {
 
-    const CartContext = useContext(CartContext);
-
-    const {cart, addToCart} = CartContext;
-    console.log(CartContext)
-
-    const onAdd = (qty) => {
-        addToCart(item, qty)
-    }
-    return(
-        <Link to="item/:id">
-        <div  className="container">
-        <div  className="card">
-            <div  className="shoeBackground">
-                <div  className="gradients">
-                    <div  className="gradient second" color="blue"></div>
-                    <div  className="gradient" color="red"></div>
-                    <div  className="gradient" color="green"></div>
-                    <div  className="gradient" color="orange"></div>
-                    <div  className="gradient" color="black"></div>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    </Link>
-        );
-
-
-
-
+    return (
+        <>  
+            <article className="grid__article" id={producto.id}>
+                <Link to={`/producto/${producto.id}`}>
+                    <img src={producto.img} className="article__imagen" alt={producto.nombre}/>
+                </Link>
+                <h2 className="article__nombre">{producto.nombre}</h2>
+                <p className="article__precio">${producto.precio}</p>
+            </article>
+        </>
+    );
 }
 
+export default Item;
 
 
-export default Item
+
+
+
+    
