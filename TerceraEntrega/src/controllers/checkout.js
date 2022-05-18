@@ -8,37 +8,6 @@ const db = admin.firestore();
 const query = db.collection(collection)
 
 
-function checkout(req, res) {
-
-    async function emptyCart() {
-        const idCart = req.session.userCartId
-        try {
-            const doc = query.doc(`${idCart}`)
-            const item = await doc.get()
-            const foundCart = item.data()
-            const userCartContent = foundCart.productos
-            sendCheckoutMail(userCartContent)
-            await doc.update({ productos: [] })
-            res.set({ 'Refresh': '2; url=/index' });
-            res.render('checkout-success')
-        }
-        catch (error) {
-            error.message = (`Error al vaciar el carrito: ${error.message}`)
-            next(error)
-        }
-    }
-    emptyCart()
-
-    async function sendCheckoutMail(userCartContent) {
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            port: 587,
-            auth: {
-                user: config.adminMailCredentials.adminMail,
-                pass: config.adminMailCredentials.adminMailPass
-            }
-        });
-
         const mailOptions = {
             from: 'App Ecommerce Backend Coderhouse',
             to: req.session.email,
